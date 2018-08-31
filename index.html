@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="jquery-3.3.1.min.js"></script>
+    <script src="client.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <h1>Salary Calculator</h1>
+
+<h3>Add Employee</h3>
+    <input placeholder="firstName" id="firstName" />
+    <input placeholder="lastName" id="lastName" />
+    <input placeholder="ID" id="ID" />
+    <input placeholder="title" id="Title" />
+    <input placeholder="annualSalary" id="annualSalary" />
+    <button id="addNewEmployee">Add New Employee</button>
+
+<table style="width:75%">
+        <thead>
+            <tbody id="salaryCalculator">
+        <tr>
+          <th>First Name</th>
+          <th>Last Name</th> 
+          <th>ID</th>
+          <th>Title</th>
+          <th>Annual Salary</th>
+        </tr>
+    </thead>
+        <tr>
+          <td>Jen</td>
+          <td>Barber</td> 
+          <td>4521</td>
+          <td>Team Lead</td>
+          <td>80000</td>
+          <td><button class="deleteButton">Delete</button></td>
+        </tr>
+        <tr>
+          <td>Maurice</td>
+          <td>Moss</td> 
+          <td>8724</td>
+          <td>Support Team</td>
+          <td>58000</td>
+          <td><button class="deleteButton">Delete</button></td>
+        </tr>
+    </tbody>
+      </table>
+    
+</body>
+</html>
