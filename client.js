@@ -18,11 +18,13 @@ function submitClick() {
     let newEmployeeLastName = $('#lastName').val();
     let newEmployeeID = $('#ID').val();
     let newEmployeeTitle = $('#title').val();
-    let newEmployeeAnnualSalary = $('#annualSalary').val();
+    let newEmployeeAnnualSalary = parseInt($('#annualSalary').val());
     
 
     // add newEmployeeAnnualSalaries together : new salay + subtoal of prev salaries
     annualSalaryTotal = newEmployeeAnnualSalary + annualSalaryTotal;
+    $('#annualSalaryTotal').text('Annual Salary Total: ' + annualSalaryTotal);
+    console.log('total annual salary is', annualSalaryTotal);
 // clear boxes here
 
     $('#salaryTableBody').append(`
