@@ -5,6 +5,8 @@ $(document).ready(onReady);
 function onReady() {
     console.log('jQuery has been loaded');
     $('#addNewEmployee').on('click', submitClick);// add listener & callback
+    // target class of deleteButton, target the tbody to delete
+    $('#salaryTableBody').on('click','.deleteButton',deleteClick); // listener & callback fcn
 }
 
 function submitClick() {
@@ -17,7 +19,7 @@ function submitClick() {
     let newEmployeeAnnualSalary = $('#annualSalary').val();
 
 
-    $('"salaryCalculatorTable"').append(`
+    $('#salaryTableBody').append(`
         <tr>
             <td>` + newEmployeeFirstName + `</td>
             <td>` + newEmployeeLastName + `</td> 
@@ -27,4 +29,9 @@ function submitClick() {
             <td><button class="deleteButton">Delete</button></td>
         </tr>
     `);// select tbody and put a row inside it
+}
+
+function deleteClick() {
+    console.log('delete was clicked');
+    $(this).closest('tr').remove(); // DOM traversal
 }
