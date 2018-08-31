@@ -1,5 +1,7 @@
 console.log('clientjs has been loaded');
 
+let annualSalaryTotal = 0;
+
 $(document).ready(onReady);
 
 function onReady() {
@@ -17,7 +19,11 @@ function submitClick() {
     let newEmployeeID = $('#ID').val();
     let newEmployeeTitle = $('#title').val();
     let newEmployeeAnnualSalary = $('#annualSalary').val();
+    
 
+    // add newEmployeeAnnualSalaries together : new salay + subtoal of prev salaries
+    annualSalaryTotal = newEmployeeAnnualSalary + annualSalaryTotal;
+// clear boxes here
 
     $('#salaryTableBody').append(`
         <tr>
@@ -34,4 +40,8 @@ function submitClick() {
 function deleteClick() {
     console.log('delete was clicked');
     $(this).closest('tr').remove(); // DOM traversal
+}
+
+function calculateMonthlyCosts(newEmployeeAnnualSalary) {
+
 }
