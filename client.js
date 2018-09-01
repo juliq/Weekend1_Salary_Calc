@@ -1,6 +1,7 @@
 console.log('clientjs has been loaded');
 
 let annualSalaryTotal = 0;
+let monthlySalaryTotal = 0;
 
 $(document).ready(onReady);
 
@@ -13,18 +14,23 @@ function onReady() {
 
 function submitClick() {
     console.log('submit button has been clicked');
-    // create variables to make code less messy
+    // create variables to make code less messy for the table
     let newEmployeeFirstName = $('#firstName').val();
     let newEmployeeLastName = $('#lastName').val();
     let newEmployeeID = $('#ID').val();
     let newEmployeeTitle = $('#title').val();
     let newEmployeeAnnualSalary = parseInt($('#annualSalary').val());
+    // let annualSalaryTotal = parseInt($('#annualSalary').val());
     
 
-    // add newEmployeeAnnualSalaries together : new salay + subtoal of prev salaries
+    // add newEmployeeAnnualSalaries together : new salary + subtoal of prev salaries
     annualSalaryTotal = newEmployeeAnnualSalary + annualSalaryTotal;
     $('#annualSalaryTotal').text('Annual Salary Total: ' + annualSalaryTotal);
     console.log('total annual salary is', annualSalaryTotal);
+    // divide annualSalaryTotal by 12 to get Total Monthly Salary
+    monthlySalaryTotal = annualSalaryTotal / 12;
+    $('#monthlySalaryTotal').text('Monthly Salary Total' / '12');
+    console.log('monthly salary total is', monthlySalaryTotal);
 // clear boxes here
 
     $('#salaryTableBody').append(`
