@@ -20,18 +20,27 @@ function submitClick() {
     let newEmployeeID = $('#ID').val();
     let newEmployeeTitle = $('#title').val();
     let newEmployeeAnnualSalary = parseInt($('#annualSalary').val());
-    // let annualSalaryTotal = parseInt($('#annualSalary').val());
+    
     
 
     // add newEmployeeAnnualSalaries together : new salary + subtoal of prev salaries
     annualSalaryTotal = newEmployeeAnnualSalary + annualSalaryTotal;
     $('#annualSalaryTotal').text('Annual Salary Total: ' + annualSalaryTotal);
     console.log('total annual salary is', annualSalaryTotal);
+
     // divide annualSalaryTotal by 12 to get Total Monthly Salary
     monthlySalaryTotal = annualSalaryTotal / 12;
-    $('#monthlySalaryTotal').text('Monthly Salary Total' / '12');
+    $('#monthlySalaryTotal').text('Monthly Salary Total: $' + monthlySalaryTotal);
     console.log('monthly salary total is', monthlySalaryTotal);
+
+    // background of Total Monthly turns red if total monthly cost excees $20,000
+    if(monthlySalaryTotal > 20000){
+        $('#monthlySalaryTotal').css('background-color', 'red');
+    }
+    
+
 // clear boxes here
+
 
     $('#salaryTableBody').append(`
         <tr>
@@ -48,8 +57,8 @@ function submitClick() {
 function deleteClick() {
     console.log('delete was clicked');
     $(this).closest('tr').remove(); // DOM traversal
+
+    
 }
 
-function calculateMonthlyCosts(newEmployeeAnnualSalary) {
 
-}
