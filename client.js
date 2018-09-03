@@ -10,6 +10,7 @@ function onReady() {
     $('#addNewEmployee').on('click', submitClick);// add listener & callback
     // target class of deleteButton, target the tbody to delete
     $('#salaryTableBody').on('click','.deleteButton',deleteClick); // listener & callback fcn
+    $('#addNewEmployee').val('');
 }
 
 function submitClick() {
@@ -24,12 +25,12 @@ function submitClick() {
     
 
     // add newEmployeeAnnualSalaries together : new salary + subtoal of prev salaries
-    annualSalaryTotal = newEmployeeAnnualSalary + annualSalaryTotal;
+    annualSalaryTotal = (newEmployeeAnnualSalary + annualSalaryTotal);
     $('#annualSalaryTotal').text('Annual Salary Total: ' + annualSalaryTotal);
     console.log('total annual salary is', annualSalaryTotal);
 
     // divide annualSalaryTotal by 12 to get Total Monthly Salary
-    monthlySalaryTotal = annualSalaryTotal / 12;
+    monthlySalaryTotal = ((annualSalaryTotal / 12).toFixed(2));
     $('#monthlySalaryTotal').text('Monthly Salary Total: $' + monthlySalaryTotal);
     console.log('monthly salary total is', monthlySalaryTotal);
 
@@ -40,6 +41,7 @@ function submitClick() {
     
 
 // clear boxes here
+//$('#firstName').val('');
 
 
     $('#salaryTableBody').append(`
