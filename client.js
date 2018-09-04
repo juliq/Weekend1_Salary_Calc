@@ -3,7 +3,11 @@ console.log('clientjs has been loaded');
 let annualSalaryTotal = 0;
 let monthlySalaryTotal = 0;
 
+
+
 $(document).ready(onReady);
+
+
 
 function onReady() {
     console.log('jQuery has been loaded');
@@ -21,7 +25,7 @@ function submitClick() {
     let newEmployeeID = $('#ID').val();
     let newEmployeeTitle = $('#title').val();
     let newEmployeeAnnualSalary = parseInt($('#annualSalary').val());
-    
+
     
 
     // add newEmployeeAnnualSalaries together : new salary + subtoal of prev salaries
@@ -30,18 +34,24 @@ function submitClick() {
     console.log('total annual salary is', annualSalaryTotal);
 
     // divide annualSalaryTotal by 12 to get Total Monthly Salary
-    monthlySalaryTotal = ((annualSalaryTotal / 12).toFixed(2));
-    $('#monthlySalaryTotal').text('Monthly Salary Total: $' + monthlySalaryTotal);
+    monthlySalaryTotal = ((annualSalaryTotal / 12).toFixed(2));  // shows number out 2 decimals
+    // let number = monthlySalaryTotal;
+    //     console.log(number.toLocaleString()); // trying to show commas here
+    $('#monthlySalaryTotal').text('Monthly Total: $' + monthlySalaryTotal);
     console.log('monthly salary total is', monthlySalaryTotal);
 
-    // background of Total Monthly turns red if total monthly cost excees $20,000
+    // background of Total Monthly turns red if total monthly cost exceeds $20,000
     if(monthlySalaryTotal > 20000){
-        $('#monthlySalaryTotal').css('background-color', 'red');
+    $('#monthlySalaryTotal').css('background-color', 'red');    
+        
     }
-    
 
-// clear boxes here
-//$('#firstName').val('');
+// clear boxes
+$('#firstName').val(''); //clears first name input box
+$('#lastName').val(''); 
+$('#ID').val(''); 
+$('#title').val(''); 
+$('#annualSalary').val(''); 
 
 
     $('#salaryTableBody').append(`
@@ -54,13 +64,10 @@ function submitClick() {
             <td><button class="deleteButton">Delete</button></td>
         </tr>
     `);// select tbody and put a row inside it
+
 }
 
 function deleteClick() {
     console.log('delete was clicked');
-    $(this).closest('tr').remove(); // DOM traversal
-
-    
+    $(this).closest('tr').remove(); // DOM traversal   
 }
-
-

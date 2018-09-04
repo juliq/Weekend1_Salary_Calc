@@ -9,7 +9,7 @@ body {
     background-color: #A9A9A9;
     padding: 25px;
     width: 90%
- 
+    
 }
 
 h1 {
@@ -60,3 +60,18 @@ thead th:nth-child(4) {
 thead th:nth-child(5) {
     width: 22%;
 }
+
+{
+    background-color: red;
+}
+
+#monthlySalaryTotal {
+    width: 15%;
+    text-align: right;
+    height: 50px;
+    margin: 10 px;
+    padding: 10px, 20px, 20px, 10px;
+    vertical-align: bottom;
+    display: inline-block;
+}
+
